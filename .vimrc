@@ -12,7 +12,6 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 
-
 " 見た目系
 " 行番号を表示
 set number
@@ -62,8 +61,13 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 " ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>et number
+"nmap <Esc><Esc> :nohlsearch<CR><Esc>et number
+nnoremap <Esc><Esc> :nohl<CR>
+"F3でハイライトの切り替え
+nnoremap <F3> :set hlsearch!<CR>
 
 "コピー系
-set clipboard+=unnamed
-set clipboard+=autoselect
+set clipboard=unnamedplus
+
+"構文チェック
+syntax on;
